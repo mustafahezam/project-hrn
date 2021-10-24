@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/vendor/tiny-slider.css">
   <!-- favicon -->
   <link rel="icon" href="img/favicon.ico">
-  <title>Vikinger | Newsfeed</title>
+  <title>Vikinger | <?php echo gettitle(); ?> </title>
 </head>
 <body>
   <!-- PAGE LOADER -->

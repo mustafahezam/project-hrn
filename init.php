@@ -1,8 +1,9 @@
 <?php
 
    $App  = 'includes/App/';
-   $func = 'incluses/function.php';
+   
 
+   include $App . 'function.php';
    include $App . 'head.php';
    include $App . 'aside.php';
    include $App . 'asideHidden.php';

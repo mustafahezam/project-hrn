@@ -1,4 +1,5 @@
 <?php
+  $title = "الرئيسية";
    include 'init.php';
 
 ?>
