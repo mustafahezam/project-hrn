@@ -2,7 +2,7 @@
    include 'includes/App/head.php';
 ?>
 
-  <!-- NAVIGATION WIDGET-test -->
+  <!-- NAVIGATION WIDGET-->
   <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
     <!-- USER AVATAR -->
     <a class="user-avatar small no-outline online" href="profile-timeline.html">
