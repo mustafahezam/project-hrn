@@ -1,6 +1,6 @@
 <?php
 
-   $App  = 'includes/App/';
+   $App = 'includes/App/';
    
 
    include $App . 'function.php';
@@ -12,4 +12,3 @@
    include $App . 'nav.php';
    include $App . 'navMobile.php';
 
-?>

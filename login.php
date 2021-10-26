@@ -1,3 +1,9 @@
+<?php
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,11 +210,11 @@
         <!-- /FORM BOX DECORATION -->
 
         <!-- FORM BOX TITLE -->
-        <h2 class="form-box-title">Create your Account!</h2>
+        <h2 class="form-box-title">انشاء حساب جديد</h2>
         <!-- /FORM BOX TITLE -->
     
         <!-- FORM -->
-        <form class="form">
+        <form class="form" id='SignUp' >
           <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
@@ -306,6 +312,7 @@
           <!-- /FORM ROW -->
         </form>
         <!-- /FORM -->
+        <div id="ajax"></div>
     
         <!-- FORM TEXT -->
         <p class="form-text">You'll receive a confirmation email in your inbox with a link to activate your account. If you have any problems, <a href="#">contact us</a>!</p>
@@ -316,7 +323,7 @@
     <!-- /LANDING FORM -->
   </div>
   <!-- /LANDING -->
-
+<script src="js/jquery-3.6.0.min.js"></script> 
 <!-- app -->
 <script src="js/utils/app.js"></script>
 <!-- XM_Plugins -->
@@ -327,5 +334,25 @@
 <script src="js/landing/landing.tabs.js"></script>
 <!-- SVG icons -->
 <script src="js/utils/svg-loader.js"></script>
+<script>
+$(document).on('submit','#SignUp',function(event){
+      event.preventDefault();
+       $.ajax({
+         type:'POST',
+         url:'includes/login/signup.php',
+         data:new FormData(this),
+         processData:false,
+         success:function(data){
+              $("#ajax").html(data);
+          }
+
+
+         })
+      
+
+
+
+  } );
+ </script> 
 </body>
 </html>

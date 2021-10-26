@@ -1,16 +1,8 @@
 <?php
-  $title = "الرئيسية";
-   include 'init.php';
-
+   $title = 'alaraisia';
+  
+   include 'init.php'; 
 ?>
-
-
-
-
-
-
-
-
 
 
   <!-- CONTENT GRID -->
