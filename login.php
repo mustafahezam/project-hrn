@@ -304,7 +304,7 @@
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- BUTTON -->
-              <button class="button medium primary"> Register Now!</button>
+              <button type="submit" class="button medium primary">Register Now!</button>
               <!-- /BUTTON -->
             </div>
             <!-- /FORM ITEM -->
@@ -342,13 +342,19 @@ $(document).on('submit','#SignUp',function(event){
          type:'POST',
          url:'includes/login/signup.php',
          beforeSend:function(){
-             Form.find("button[type='submit']").prepend('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+            Form.find("button[type='submit']").prepend('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+            Form.find("button[type='submit']").attr('disabled','true');
          },
          data:new FormData(this),
          processData:false,
          success:function(data){
               $("#ajax").html(data);
-          }
+         },
+         complete:function(data){
+            $('.spinner-border').remove();
+            Form.find("button[type='submit']").removeAttr('disabled');
+         }
+
 
 
          })

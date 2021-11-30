@@ -1,6 +1,6 @@
 <?php 
 
-    $dsn  = 'mysql:host=localhost;dbname=project-hrn';
+    $dsn  = 'mysql:host=localhost;dbname=project-hrn_db';
     $user = 'root';
     $pass = '';
 
