@@ -304,7 +304,7 @@
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- BUTTON -->
-              <button class="button medium primary">Register Now!</button>
+              <button class="button medium primary"> Register Now!</button>
               <!-- /BUTTON -->
             </div>
             <!-- /FORM ITEM -->
@@ -336,10 +336,14 @@
 <script src="js/utils/svg-loader.js"></script>
 <script>
 $(document).on('submit','#SignUp',function(event){
-      event.preventDefault();
+       event.preventDefault();
+       var Form = $(this);
        $.ajax({
          type:'POST',
          url:'includes/login/signup.php',
+         beforeSend:function(){
+             Form.find("button[type='submit']").prepend('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+         },
          data:new FormData(this),
          processData:false,
          success:function(data){
@@ -349,7 +353,6 @@ $(document).on('submit','#SignUp',function(event){
 
          })
       
-
 
 
   } );
