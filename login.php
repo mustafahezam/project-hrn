@@ -214,15 +214,41 @@
         <!-- /FORM BOX TITLE -->
     
         <!-- FORM -->
-        <form class="form" id='SignUp' >
+        <form class="form" id='SignUp' method="post" >
           <!-- FORM ROW -->
+          <div class="form-row">
+            <!-- FORM ITEM -->
+            <div class="form-item col-6">
+              <!-- FORM INPUT -->
+              <div class="form-input">
+                <label for="register-username">First Name</label>
+                <input type="text" id="register-username" name="fname">
+              </div>
+              <!-- /FORM INPUT -->
+            </div>
+            <!-- /FORM ITEM -->
+                        <!-- FORM ITEM -->
+                        <div class="form-item col-6">
+              <!-- FORM INPUT -->
+              <div class="form-input">
+                <label for="register-username">Last Name</label>
+                <input type="text" id="register-username" name="lname">
+              </div>
+              <!-- /FORM INPUT -->
+            </div>
+            <!-- /FORM ITEM -->
+          </div>
+          <!-- /FORM ROW --> 
+        
+        
+        <!-- FORM ROW -->
           <div class="form-row">
             <!-- FORM ITEM -->
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
                 <label for="register-email">Your Email</label>
-                <input type="text" id="register-email" name="register_email">
+                <input type="text" id="register-email" name="email">
               </div>
               <!-- /FORM INPUT -->
             </div>
@@ -230,20 +256,7 @@
           </div>
           <!-- /FORM ROW -->
     
-          <!-- FORM ROW -->
-          <div class="form-row">
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM INPUT -->
-              <div class="form-input">
-                <label for="register-username">Username</label>
-                <input type="text" id="register-username" name="register_username">
-              </div>
-              <!-- /FORM INPUT -->
-            </div>
-            <!-- /FORM ITEM -->
-          </div>
-          <!-- /FORM ROW -->
+         
     
           <!-- FORM ROW -->
           <div class="form-row">
@@ -252,7 +265,7 @@
               <!-- FORM INPUT -->
               <div class="form-input">
                 <label for="register-password">Password</label>
-                <input type="password" id="register-password" name="register_password">
+                <input type="password" id="register-password" name="password">
               </div>
               <!-- /FORM INPUT -->
             </div>
@@ -267,7 +280,7 @@
               <!-- FORM INPUT -->
               <div class="form-input">
                 <label for="register-password-repeat">Repeat Password</label>
-                <input type="password" id="register-password-repeat" name="register_password_repeat">
+                <input type="password" id="register-password-repeat" name="confpass">
               </div>
               <!-- /FORM INPUT -->
             </div>
@@ -346,6 +359,7 @@ $(document).on('submit','#SignUp',function(event){
             Form.find("button[type='submit']").attr('disabled','true');
          },
          data:new FormData(this),
+         contentType:false,
          processData:false,
          success:function(data){
               $("#ajax").html(data);
